@@ -1276,10 +1276,11 @@
  * The probe replaces the Z-MIN endstop and is used for Z homing.
  * (Automatically enables USE_PROBE_FOR_Z_HOMING.)
  */
-// #define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN // @josh disale
+// #define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN // @josh disable
 
 // Force the use of the probe for Z-axis homing
 #define USE_PROBE_FOR_Z_HOMING // @josh enable
+#define DIAG_JUMPERS_REMOVED //@josh add to clear warning
 
 /**
  * Z_MIN_PROBE_PIN
@@ -2031,7 +2032,7 @@
 #define LCD_BED_TRAMMING // @josh enable
 
 #if ENABLED(LCD_BED_TRAMMING)
-  #define BED_TRAMMING_INSET_LFRB { 30, 30, 30, 30 } // (mm) Left, Front, Right, Back insets
+  #define BED_TRAMMING_INSET_LFRB { 30, 30, 45, 30 } // (mm) Left, Front, Right, Back insets //@josh make right 45
   #define BED_TRAMMING_HEIGHT      0.0        // (mm) Z height of nozzle at leveling points
   #define BED_TRAMMING_Z_HOP       4.0        // (mm) Z height of nozzle between leveling points
   //#define BED_TRAMMING_INCLUDE_CENTER       // Move to the center after the last corner
